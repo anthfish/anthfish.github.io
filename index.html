@@ -792,7 +792,7 @@
         </div>
         <div class="about-card-item">
           <span class="icon">◎</span>
-          <div>Active home lab — Wireshark, pfSense, Linux</div>
+          <div>Active home lab — AD, Splunk, Sysmon, Kali</div>
         </div>
         <div class="about-card-item">
           <span class="icon">→</span>
@@ -830,7 +830,17 @@
     <div class="skill-card fade-in">
       <div class="skill-icon">🖥️</div>
       <div class="skill-name">Virtualization</div>
-      <div class="skill-desc">Spinning up and managing VMs for isolated lab environments and security testing.</div>
+      <div class="skill-desc">Spinning up and managing VMs in Oracle VirtualBox — Windows, Linux, and Server environments side by side.</div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Splunk</div>
+      <div class="skill-desc">Deployed Splunk Enterprise, configured log ingestion via Universal Forwarder, built indexes, and queried 6,000+ events using SPL.</div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">🗂️</div>
+      <div class="skill-name">Active Directory</div>
+      <div class="skill-desc">Installed AD DS, promoted a Windows Server 2022 domain controller, created domains and managed users in ADUC.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🤝</div>
@@ -885,6 +895,57 @@
   <div class="section-label fade-in">// 03 — Lab Work</div>
   <h2 class="fade-in">Hands-on from<br>day one</h2>
 
+  <!-- FEATURED LAB -->
+  <div class="lab-card fade-in" style="border-color: rgba(0,229,160,0.25); margin-bottom: 2px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+      <div class="lab-title" style="margin-bottom:0;">Active Directory + Splunk Detection Lab</div>
+      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;border:1px solid rgba(245,158,11,0.3);padding:3px 10px;border-radius:2px;white-space:nowrap;">🔄 In Progress</span>
+    </div>
+    <div class="lab-tags">
+      <span class="lab-tag">Active Directory</span>
+      <span class="lab-tag">Splunk</span>
+      <span class="lab-tag">Sysmon</span>
+      <span class="lab-tag">Kali Linux</span>
+      <span class="lab-tag">Windows Server 2022</span>
+      <span class="lab-tag">Blue Team</span>
+    </div>
+    <div class="lab-desc">A self-built mini SOC environment running entirely in VirtualBox. Four machines — a Windows 10 target, a Windows Server 2022 domain controller, an Ubuntu Splunk server, and a Kali Linux attacker box — connected via a virtual network. The goal: instrument every machine so real activity is logged and searchable, then simulate attacker behavior and go find it in Splunk.</div>
+
+    <div style="margin: 20px 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent);">What's been built</div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom:16px;">
+      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
+        <div style="color:var(--accent); margin-bottom:4px;">✓ Environment Build</div>
+        <div style="color:var(--muted);">4 VMs configured in VirtualBox. Installer integrity verified via SHA256 checksum.</div>
+      </div>
+      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
+        <div style="color:var(--accent); margin-bottom:4px;">✓ Logging Pipeline</div>
+        <div style="color:var(--muted);">Splunk Enterprise deployed. Universal Forwarder + Sysmon on target. 6,000+ events indexed and searchable.</div>
+      </div>
+      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
+        <div style="color:var(--accent); margin-bottom:4px;">✓ Active Directory</div>
+        <div style="color:var(--muted);">Windows Server 2022 promoted to DC. Domain anthfish.local created. Users configured in ADUC.</div>
+      </div>
+      <div style="background:var(--bg); border:1px solid rgba(245,158,11,0.2); padding:12px 14px; border-radius:2px; font-size:12px;">
+        <div style="color:#f59e0b; margin-bottom:4px;">⏳ Domain Join</div>
+        <div style="color:var(--muted);">Blocked by Windows 10 Home limitation. Resolving via in-place Pro upgrade.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg); border:1px solid var(--border); padding:12px 16px; border-radius:2px; font-size:12px; color:var(--muted); margin-bottom:16px;">
+      <span style="color:var(--muted);">📅 Up next:</span> Domain join → RDP enabled → Kali brute force against target → Atomic Red Team simulation → detection review in Splunk
+    </div>
+
+    <div class="lab-learned"><strong>Takeaway so far:</strong> Building the logging pipeline before attacking anything is the whole point — you can't detect what you're not collecting. Sysmon + Splunk Universal Forwarder gives you real visibility, not just noise.</div>
+
+    <a href="https://github.com/anthfish" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;color:var(--accent);text-decoration:none;letter-spacing:0.05em;">
+      → View full writeup on GitHub
+    </a>
+  </div>
+
+  <!-- SUPPORTING LABS -->
+  <div style="margin-top:32px; margin-bottom:12px; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Earlier lab work</div>
+
   <div class="lab-card fade-in">
     <div class="lab-title">Wireshark Packet Analysis</div>
     <div class="lab-tags">
@@ -897,14 +958,17 @@
   </div>
 
   <div class="lab-card fade-in">
-    <div class="lab-title">pfSense Firewall Configuration</div>
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+      <div class="lab-title" style="margin-bottom:0;">pfSense Firewall Configuration</div>
+      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;border:1px solid rgba(245,158,11,0.3);padding:3px 10px;border-radius:2px;white-space:nowrap;">🔄 In Progress</span>
+    </div>
     <div class="lab-tags">
       <span class="lab-tag">Firewall</span>
       <span class="lab-tag">Network Security</span>
       <span class="lab-tag">VM Lab</span>
     </div>
-    <div class="lab-desc">Configured a virtual firewall to control and monitor traffic between network segments, applying real-world security policies in a safe lab environment.</div>
-    <div class="lab-learned"><strong>Takeaway:</strong> Hands-on understanding of network segmentation, access control, and perimeter defense thinking.</div>
+    <div class="lab-desc">Selected a guided lab to follow — working through pfSense setup and configuration. Goal is hands-on experience with firewall rules, network segmentation, and traffic control in a virtualized environment.</div>
+    <div class="lab-learned"><strong>Takeaway:</strong> Coming soon — will document key findings once the lab is complete.</div>
   </div>
 
   <div class="lab-card fade-in">
@@ -912,15 +976,12 @@
     <div class="lab-tags">
       <span class="lab-tag">Linux</span>
       <span class="lab-tag">Command Line</span>
-      <span class="lab-tag">Scripting</span>
+      <span class="lab-tag">Ubuntu Server</span>
     </div>
-    <div class="lab-desc">Built comfort with the Linux command line — file navigation, permissions management, and basic commands used throughout security workflows.</div>
-    <div class="lab-learned"><strong>Takeaway:</strong> Linux is everywhere in security. Getting fluent early is table stakes.</div>
+    <div class="lab-desc">Built comfort with the Linux command line through real configuration work — netplan, file permissions, user management, and package installation on Ubuntu Server.</div>
+    <div class="lab-learned"><strong>Takeaway:</strong> Linux is everywhere in security. The Splunk server build alone covered more CLI fundamentals than any tutorial would.</div>
   </div>
 
-  <p class="fade-in" style="margin-top:24px;font-size:13px;color:var(--muted);">
-    → GitHub documentation in progress. Write-ups coming soon.
-  </p>
 </section>
 
 <!-- ROADMAP -->
@@ -929,14 +990,14 @@
   <h2 class="fade-in">The plan is<br>deliberate</h2>
   <div class="roadmap fade-in">
     <div class="roadmap-item active">
-      <div class="roadmap-phase">Now — Phase 1</div>
+      <div class="roadmap-phase">Now — Phase 1 & 2</div>
       <div class="roadmap-title">Getting to Work</div>
-      <div class="roadmap-desc">Turning certifications into hands-on proof. Building a consistent lab routine around Linux, Python scripting, and Wireshark. Documenting everything on GitHub so the work is visible.</div>
+      <div class="roadmap-desc">Deep in the AD + Splunk home lab — logging pipeline is live, domain controller is up, attack simulation is next. Documenting the full build on GitHub as it happens, not after.</div>
     </div>
     <div class="roadmap-item">
-      <div class="roadmap-phase">3–6 Months — Phase 2</div>
+      <div class="roadmap-phase">Next Up</div>
       <div class="roadmap-title">Building Credibility</div>
-      <div class="roadmap-desc">Expanding the home lab — Active Directory, logging, simulated SOC workflows. Getting real-world experience in an IT support or entry-level security role and learning everything I can from it.</div>
+      <div class="roadmap-desc">Completing the attack simulation phase of the lab — Kali brute force, Atomic Red Team, detection review. Targeting an IT support or entry-level SOC role to get real-world environment experience alongside the lab work.</div>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-phase">6–12 Months — Phase 3</div>
