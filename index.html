@@ -8,12 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0c0f;
-    --surface: #111318;
-    --border: #1e2229;
-    --accent: #00e5a0;
-    --accent-dim: rgba(0, 229, 160, 0.08);
-    --accent-mid: rgba(0, 229, 160, 0.15);
+    --bg: #152044;
+    --surface: #1b2a57;
+    --border: #243570;
+    --accent: #c8e833;
+    --accent-dim: rgba(200, 232, 51, 0.08);
+    --accent-mid: rgba(200, 232, 51, 0.15);
     --text: #e8eaed;
     --muted: #6b7280;
     --heading: #ffffff;
@@ -49,8 +49,8 @@
     position: fixed;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(200,232,51,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,232,51,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -67,7 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 12, 15, 0.85);
+    background: rgba(21, 32, 68, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -125,7 +125,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid rgba(0,229,160,0.3);
+    border: 1px solid rgba(200,232,51,0.3);
     padding: 6px 14px;
     border-radius: 2px;
     margin-bottom: 32px;
@@ -187,7 +187,7 @@
     align-items: center;
     gap: 8px;
     background: var(--accent);
-    color: #0a0c0f;
+    color: #0a1628;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 13px;
@@ -201,7 +201,7 @@
   .btn-primary:hover {
     background: #00ffb3;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,229,160,0.25);
+    box-shadow: 0 8px 24px rgba(200,232,51,0.25);
   }
 
   .btn-secondary {
@@ -259,7 +259,7 @@
     content: '';
     position: absolute;
     inset: -6px;
-    border: 1px solid rgba(0,229,160,0.2);
+    border: 1px solid rgba(200,232,51,0.2);
     border-radius: 4px;
     pointer-events: none;
   }
@@ -272,7 +272,7 @@
     width: 60px;
     height: 60px;
     background: var(--accent-dim);
-    border: 1px solid rgba(0,229,160,0.15);
+    border: 1px solid rgba(200,232,51,0.15);
     border-radius: 2px;
     z-index: -1;
   }
@@ -283,6 +283,8 @@
     border-top: 1px solid var(--border);
     opacity: 0;
     animation: fadeUp 0.6s ease forwards 1s;
+    display: flex;
+    gap: 48px;
   }
 
   .stat-num {
@@ -431,7 +433,7 @@
   }
 
   .cert-row:hover {
-    border-color: rgba(0,229,160,0.3);
+    border-color: rgba(200,232,51,0.3);
     background: var(--accent-dim);
   }
 
@@ -445,7 +447,7 @@
     width: 40px;
     height: 40px;
     background: var(--accent-mid);
-    border: 1px solid rgba(0,229,160,0.2);
+    border: 1px solid rgba(200,232,51,0.2);
     border-radius: 2px;
     display: flex;
     align-items: center;
@@ -476,9 +478,9 @@
   }
 
   .status-earned {
-    background: rgba(0,229,160,0.12);
+    background: rgba(200,232,51,0.12);
     color: var(--accent);
-    border: 1px solid rgba(0,229,160,0.2);
+    border: 1px solid rgba(200,232,51,0.2);
   }
 
   .status-planned {
@@ -511,7 +513,7 @@
     transform-origin: bottom;
   }
 
-  .lab-card:hover { border-color: rgba(0,229,160,0.2); background: var(--accent-dim); }
+  .lab-card:hover { border-color: rgba(200,232,51,0.2); background: var(--accent-dim); }
   .lab-card:hover::before { transform: scaleY(1); }
 
   .lab-title {
@@ -534,7 +536,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid rgba(0,229,160,0.2);
+    border: 1px solid rgba(200,232,51,0.2);
     padding: 3px 10px;
     border-radius: 2px;
   }
@@ -594,7 +596,20 @@
 
   .roadmap-item.active::before {
     background: var(--accent);
-    box-shadow: 0 0 12px rgba(0,229,160,0.5);
+    box-shadow: 0 0 12px rgba(200,232,51,0.5);
+  }
+
+  .roadmap-item.completed {
+    opacity: 0.5;
+  }
+
+  .roadmap-item.completed::before {
+    background: var(--muted);
+    border-color: var(--muted);
+  }
+
+  .roadmap-item.completed .roadmap-phase {
+    color: var(--muted);
   }
 
   .roadmap-phase {
@@ -662,7 +677,7 @@
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,229,160,0.1);
+    box-shadow: 0 8px 24px rgba(200,232,51,0.1);
   }
 
   /* FOOTER */
@@ -731,14 +746,13 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-tag">Open to IT Support & SOC Roles</div>
+      <div class="hero-tag">Accepting IT Support & SOC Roles</div>
       <h1>Anthony<br><span class="line2">Fisher</span></h1>
       <p class="hero-subtitle">
-        CompTIA Network+ & Security+ certified. Sales background. Blue Team mindset. 
-        Building toward a career protecting the businesses that matter.
+        CompTIA Net+ & Sec+ certified. Sales background. Blue Team mindset. A professional record built on documentation, evidence, and client trust.
       </p>
       <div class="hero-ctas">
-        <a href="#about" class="btn-primary">↓ My Story</a>
+        <a href="#about" class="btn-primary">↓ The Practice</a>
         <a href="#connect" class="btn-secondary">Let's Connect →</a>
       </div>
     </div>
@@ -764,20 +778,17 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label fade-in">// 01 — About</div>
-  <h2 class="fade-in">Not a career<br>changer. A career<br><em style="color:var(--accent);font-style:normal;">builder.</em></h2>
+  <div class="section-label fade-in">// 01 — Professional Background</div>
+  <h2 class="fade-in">Profile</h2>
   <div class="about-grid">
     <div class="about-text fade-in">
-      <p>Sales isn't just something I do — it's something I come from.</p>
-      <p>I grew up around a Ford dealership my family owned for over 60 years. Watching my father and grandfather work with genuine passion and integrity, I absorbed that approach without even realizing it. And it goes back further than them — from my great-grandfather's flower shop to a great-great-grandfather who was a rubber goods salesman in the early 1900s, entrepreneurship and salesmanship have been woven into my family for generations.</p>
-      <p>I started at the bottom of that dealership as a part-time sales assistant, worked there for five years, and eventually had enough confidence to start my own business. When COVID hit, I stepped back, went back to school, and graduated into a world full of uncertainty. I picked up work in landscaping, moved up quickly, and even helped build a brand new sales role from scratch within that company — exactly the kind of challenge I gravitate toward.</p>
-      <p>Through all of it, the throughline has always been people — understanding them, earning their trust, and solving their problems.</p>
-      <p>Now I'm channeling that foundation into cybersecurity. I hold both CompTIA Network+ and Security+ certifications and I've been building hands-on skills through VM labs. My goal is Blue Team / defensive security — specifically protecting small and medium businesses with an e-commerce presence. As commerce moves increasingly online, so do the threats against it — and that's exactly where I want to be.</p>
-      <p>I'm not a career changer who stumbled into tech. I'm someone who's spent their whole life learning how to understand people and solve problems — and now I'm adding the technical skills to back it up.</p>
+      <p>Anthony Fisher is an IT support and cybersecurity professional with a foundation in customer-facing sales. His professional formation took place in a family-owned Ford dealership operated for over sixty years — an environment that instilled the disciplines of client assessment, trust-building, and direct problem resolution.</p>
+      <p>In late 2024, he transitioned into cybersecurity. The troubleshooting instinct was already present; the transition applied it to systems that compound in value. He holds CompTIA Network+ and Security+ certifications and maintains two documented home laboratories.</p>
+      <p>Anthony is currently open to entry-level IT support and SOC engagements. His distinguishing asset is not technical alone: it is the demonstrated ability to manage a frustrated user, de-escalate promptly, and close a ticket cleanly — technically and experientially.</p>
     </div>
     <div class="fade-in">
       <div class="about-card">
-        <div class="about-card-title">Quick Stats</div>
+        <div class="about-card-title">Credentials at a Glance</div>
         <div class="about-card-item">
           <span class="icon">✓</span>
           <div>CompTIA Network+ certified</div>
@@ -788,19 +799,19 @@
         </div>
         <div class="about-card-item">
           <span class="icon">◎</span>
-          <div>5+ years customer-facing sales</div>
+          <div>5+ years client-facing operations</div>
         </div>
         <div class="about-card-item">
           <span class="icon">◎</span>
-          <div>Active home lab — AD, Splunk, Sysmon, Kali</div>
+          <div>Active home lab — AD/Splunk, SafeLine WAF, Wireshark</div>
         </div>
         <div class="about-card-item">
           <span class="icon">→</span>
-          <div>Target: Blue Team / SOC</div>
+          <div>Practice Area: Blue Team / SOC</div>
         </div>
         <div class="about-card-item">
           <span class="icon">→</span>
-          <div>Focus: E-commerce threat protection</div>
+          <div>Core Focus: Risk Mitigation & Defense</div>
         </div>
       </div>
     </div>
@@ -809,48 +820,48 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label fade-in">// 02 — Skills</div>
-  <h2 class="fade-in">What I bring<br>to the table</h2>
+  <div class="section-label fade-in">// 02 — Core Competencies</div>
+  <h2 class="fade-in">Areas of Expertise</h2>
   <div class="skills-grid">
     <div class="skill-card fade-in">
       <div class="skill-icon">📡</div>
       <div class="skill-name">Network Analysis</div>
-      <div class="skill-desc">Wireshark packet capture, traffic analysis, protocol identification, anomaly detection.</div>
+      <div class="skill-desc">Packet capture and traffic analysis conducted in a controlled VM lab. Protocol reading, anomaly identification, and baseline establishment — so that deviation is detectable.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🔒</div>
-      <div class="skill-name">Firewall & Security</div>
-      <div class="skill-desc">pfSense configuration, network segmentation, rule-based access control.</div>
+      <div class="skill-name">Web Application Security</div>
+      <div class="skill-desc">SQL injection, XSS, and path traversal tested against a deployed WAF. Findings documented: what was intercepted, what passed, and the operational significance of each.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🐧</div>
       <div class="skill-name">Linux</div>
-      <div class="skill-desc">CLI navigation, file permissions, basic scripting — fluency in progress.</div>
+      <div class="skill-desc">Command-line operation, permissions, and foundational scripting. Present in every security workflow; fluency maintained deliberately.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🖥️</div>
       <div class="skill-name">Virtualization</div>
-      <div class="skill-desc">Spinning up and managing VMs in Oracle VirtualBox — Windows, Linux, and Server environments side by side.</div>
-    </div>
-    <div class="skill-card fade-in">
-      <div class="skill-icon">📊</div>
-      <div class="skill-name">Splunk</div>
-      <div class="skill-desc">Deployed Splunk Enterprise, configured log ingestion via Universal Forwarder, built indexes, and queried 6,000+ events using SPL.</div>
-    </div>
-    <div class="skill-card fade-in">
-      <div class="skill-icon">🗂️</div>
-      <div class="skill-name">Active Directory</div>
-      <div class="skill-desc">Installed AD DS, promoted a Windows Server 2022 domain controller, created domains and managed users in ADUC.</div>
+      <div class="skill-desc">Four-VM environments operated in VirtualBox for laboratory work. Comfortable provisioning, breaking, and diagnosing systems on demand.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🤝</div>
-      <div class="skill-name">Communication</div>
-      <div class="skill-desc">Translating technical problems into plain language. Built from years of customer-facing work.</div>
+      <div class="skill-name">Client Communication</div>
+      <div class="skill-desc">Five+ years translating technical problems into language clients can act on. Technical competence is common; a clean handoff to the user is where most fall short. This is not a gap in this practice.</div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Splunk (SIEM)</div>
+      <div class="skill-desc">Indexes, Universal Forwarder, and Sysmon ingestion built from scratch in a home lab. Over 6,000 events searchable and staged for attack simulation.</div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">🏢</div>
+      <div class="skill-name">Active Directory</div>
+      <div class="skill-desc">Domain controller deployed; users and groups configured; Splunk logging the full environment. Built to be attacked — domain-join completion pending.</div>
     </div>
     <div class="skill-card fade-in">
       <div class="skill-icon">🧠</div>
       <div class="skill-name">Pattern Recognition</div>
-      <div class="skill-desc">Spotting what's off — in a conversation or in a packet capture. Same instinct, different context.</div>
+      <div class="skill-desc">Trained to detect deviations from the norm. 5+ years of client operations taught me to trust intuition; technical training taught me to prove it.</div>
     </div>
   </div>
 
@@ -892,59 +903,52 @@
 
 <!-- LABS -->
 <section id="labs">
-  <div class="section-label fade-in">// 03 — Lab Work</div>
-  <h2 class="fade-in">Hands-on from<br>day one</h2>
+  <div class="section-label fade-in">// 03 — Technical Environments</div>
+  <h2 class="fade-in">Applied Lab Work</h2>
 
-  <!-- FEATURED LAB -->
-  <div class="lab-card fade-in" style="border-color: rgba(0,229,160,0.25); margin-bottom: 2px;">
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-      <div class="lab-title" style="margin-bottom:0;">Active Directory + Splunk Detection Lab</div>
-      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;border:1px solid rgba(245,158,11,0.3);padding:3px 10px;border-radius:2px;white-space:nowrap;">🔄 In Progress</span>
+  <!-- AD + Splunk Detection Lab -->
+  <div class="lab-card fade-in" style="border-color:rgba(200,232,51,0.25);margin-bottom:24px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+      <div class="lab-title" style="margin-bottom:0;">AD + Splunk Detection Homelab</div>
+      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(245,158,11,0.12);color:#fbbf24;border:1px solid rgba(245,158,11,0.25);padding:4px 12px;border-radius:2px;">🔄 In Progress</span>
     </div>
     <div class="lab-tags">
       <span class="lab-tag">Active Directory</span>
       <span class="lab-tag">Splunk</span>
-      <span class="lab-tag">Sysmon</span>
-      <span class="lab-tag">Kali Linux</span>
-      <span class="lab-tag">Windows Server 2022</span>
       <span class="lab-tag">Blue Team</span>
+      <span class="lab-tag">Attack Simulation</span>
     </div>
-    <div class="lab-desc">A self-built mini SOC environment running entirely in VirtualBox. Four machines — a Windows 10 target, a Windows Server 2022 domain controller, an Ubuntu Splunk server, and a Kali Linux attacker box — connected via a virtual network. The goal: instrument every machine so real activity is logged and searchable, then simulate attacker behavior and go find it in Splunk.</div>
-
-    <div style="margin: 20px 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent);">What's been built</div>
-
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom:16px;">
-      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
-        <div style="color:var(--accent); margin-bottom:4px;">✓ Environment Build</div>
-        <div style="color:var(--muted);">4 VMs configured in VirtualBox. Installer integrity verified via SHA256 checksum.</div>
-      </div>
-      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
-        <div style="color:var(--accent); margin-bottom:4px;">✓ Logging Pipeline</div>
-        <div style="color:var(--muted);">Splunk Enterprise deployed. Universal Forwarder + Sysmon on target. 6,000+ events indexed and searchable.</div>
-      </div>
-      <div style="background:var(--bg); border:1px solid var(--border); padding:12px 14px; border-radius:2px; font-size:12px;">
-        <div style="color:var(--accent); margin-bottom:4px;">✓ Active Directory</div>
-        <div style="color:var(--muted);">Windows Server 2022 promoted to DC. Domain anthfish.local created. Users configured in ADUC.</div>
-      </div>
-      <div style="background:var(--bg); border:1px solid rgba(245,158,11,0.2); padding:12px 14px; border-radius:2px; font-size:12px;">
-        <div style="color:#f59e0b; margin-bottom:4px;">⏳ Domain Join</div>
-        <div style="color:var(--muted);">Blocked by Windows 10 Home limitation. Resolving via in-place Pro upgrade.</div>
-      </div>
+    <div class="lab-desc">Four VMs: Windows Server 2022 DC, Windows 10 target, Kali attacker, Ubuntu Splunk server. Sysmon and Universal Forwarder feed centralized logging — over 6,000 events indexed. Current constraint: Windows 10 Home does not support domain join. Troubleshooting is documented; solution in progress; attack simulation queued upon resolution.</div>
+    <div style="margin-top:16px;">
+      <a href="https://github.com/anthfish/active-directory-homelab" target="_blank" style="font-size:12px;color:var(--accent);text-decoration:none;border:1px solid rgba(200,232,51,0.2);padding:6px 14px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
     </div>
-
-    <div style="background:var(--bg); border:1px solid var(--border); padding:12px 16px; border-radius:2px; font-size:12px; color:var(--muted); margin-bottom:16px;">
-      <span style="color:var(--muted);">📅 Up next:</span> Domain join → RDP enabled → Kali brute force against target → Atomic Red Team simulation → detection review in Splunk
-    </div>
-
-    <div class="lab-learned"><strong>Takeaway so far:</strong> Building the logging pipeline before attacking anything is the whole point — you can't detect what you're not collecting. Sysmon + Splunk Universal Forwarder gives you real visibility, not just noise.</div>
-
-    <a href="https://github.com/anthfish" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;color:var(--accent);text-decoration:none;letter-spacing:0.05em;">
-      → View full writeup on GitHub
-    </a>
   </div>
 
-  <!-- SUPPORTING LABS -->
-  <div style="margin-top:32px; margin-bottom:12px; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Earlier lab work</div>
+  <!-- SafeLine WAF Homelab -->
+  <div class="lab-card fade-in" style="border-color:rgba(200,232,51,0.25);margin-bottom:24px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+      <div class="lab-title" style="margin-bottom:0;">SafeLine WAF Homelab</div>
+      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(200,232,51,0.1);color:var(--accent);border:1px solid rgba(200,232,51,0.2);padding:4px 12px;border-radius:2px;">✓ Complete</span>
+    </div>
+    <div class="lab-tags">
+      <span class="lab-tag">Web Application Security</span>
+      <span class="lab-tag">WAF</span>
+      <span class="lab-tag">DVWA</span>
+      <span class="lab-tag">Docker</span>
+    </div>
+    <div class="lab-desc">Deployed SafeLine WAF in front of DVWA and conducted a structured vulnerability assessment — SQL injection, XSS, and path traversal. Documented what was blocked, what bypassed the WAF, and the defensive implications of each finding.</div>
+    <div style="margin-top:16px;">
+      <a href="https://github.com/anthfish/safeline-waf-homelab" target="_blank" style="font-size:12px;color:var(--accent);text-decoration:none;border:1px solid rgba(200,232,51,0.2);padding:6px 14px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <div style="margin-bottom:24px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;padding-top:8px;">Earlier lab work</div>
 
   <div class="lab-card fade-in">
     <div class="lab-title">Wireshark Packet Analysis</div>
@@ -953,22 +957,7 @@
       <span class="lab-tag">Blue Team</span>
       <span class="lab-tag">VM Lab</span>
     </div>
-    <div class="lab-desc">Captured and analyzed live network traffic in a VM environment to identify protocols, spot anomalies, and practice reading packet data at depth.</div>
-    <div class="lab-learned"><strong>Takeaway:</strong> How to filter and interpret traffic — foundational for SOC work and threat detection.</div>
-  </div>
-
-  <div class="lab-card fade-in">
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-      <div class="lab-title" style="margin-bottom:0;">pfSense Firewall Configuration</div>
-      <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;border:1px solid rgba(245,158,11,0.3);padding:3px 10px;border-radius:2px;white-space:nowrap;">🔄 In Progress</span>
-    </div>
-    <div class="lab-tags">
-      <span class="lab-tag">Firewall</span>
-      <span class="lab-tag">Network Security</span>
-      <span class="lab-tag">VM Lab</span>
-    </div>
-    <div class="lab-desc">Selected a guided lab to follow — working through pfSense setup and configuration. Goal is hands-on experience with firewall rules, network segmentation, and traffic control in a virtualized environment.</div>
-    <div class="lab-learned"><strong>Takeaway:</strong> Coming soon — will document key findings once the lab is complete.</div>
+    <div class="lab-desc">Live traffic capture in a VM environment. Analyzed protocol behavior, identified anomalies, and built familiarity with what normal network traffic looks like — foundational to SOC work.</div>
   </div>
 
   <div class="lab-card fade-in">
@@ -976,38 +965,36 @@
     <div class="lab-tags">
       <span class="lab-tag">Linux</span>
       <span class="lab-tag">Command Line</span>
-      <span class="lab-tag">Ubuntu Server</span>
+      <span class="lab-tag">Scripting</span>
     </div>
-    <div class="lab-desc">Built comfort with the Linux command line through real configuration work — netplan, file permissions, user management, and package installation on Ubuntu Server.</div>
-    <div class="lab-learned"><strong>Takeaway:</strong> Linux is everywhere in security. The Splunk server build alone covered more CLI fundamentals than any tutorial would.</div>
+    <div class="lab-desc">Navigation, file permissions, and basic scripting. Linux appears in every security workflow — building fluency early and deliberately.</div>
   </div>
-
 </section>
 
 <!-- ROADMAP -->
 <section id="roadmap">
-  <div class="section-label fade-in">// 04 — Where I'm Headed</div>
-  <h2 class="fade-in">The plan is<br>deliberate</h2>
+  <div class="section-label fade-in">// 04 — Trajectory</div>
+  <h2 class="fade-in">Practice Roadmap</h2>
   <div class="roadmap fade-in">
-    <div class="roadmap-item active">
-      <div class="roadmap-phase">Now — Phase 1 & 2</div>
-      <div class="roadmap-title">Getting to Work</div>
-      <div class="roadmap-desc">Deep in the AD + Splunk home lab — logging pipeline is live, domain controller is up, attack simulation is next. Documenting the full build on GitHub as it happens, not after.</div>
+    <div class="roadmap-item completed">
+      <div class="roadmap-phase">Phase 1 — Established</div>
+      <div class="roadmap-title">Foundational Validation</div>
+      <div class="roadmap-desc">Certifications translated into demonstrable technical proof. A rigorous lab regimen was established — emphasizing Linux, Python scripting, and Wireshark — with all findings documented on GitHub to ensure verifiable transparency.</div>
     </div>
-    <div class="roadmap-item">
-      <div class="roadmap-phase">Next Up</div>
-      <div class="roadmap-title">Building Credibility</div>
-      <div class="roadmap-desc">Completing the attack simulation phase of the lab — Kali brute force, Atomic Red Team, detection review. Targeting an IT support or entry-level SOC role to get real-world environment experience alongside the lab work.</div>
+    <div class="roadmap-item active">
+      <div class="roadmap-phase">Current — Phase 2</div>
+      <div class="roadmap-title">Operational Expansion</div>
+      <div class="roadmap-desc">Scaling laboratory environments to include advanced Active Directory, centralized logging, and simulated SOC workflows. Actively securing an IT support or entry-level security engagement to apply these competencies in a production environment.</div>
     </div>
     <div class="roadmap-item">
       <div class="roadmap-phase">6–12 Months — Phase 3</div>
-      <div class="roadmap-title">Growing Into the Role</div>
-      <div class="roadmap-desc">Moving into a dedicated security role — SOC analyst, security engineer, or similar. Deepening cloud and SaaS knowledge. Specialising in the threats that matter most to online businesses.</div>
+      <div class="roadmap-title">Specialized Deployment</div>
+      <div class="roadmap-desc">Transitioning into a dedicated security role — SOC analyst, security engineer, or equivalent. Expanding cloud and SaaS expertise, with a targeted focus on mitigating threats specific to digital and e-commerce operations.</div>
     </div>
     <div class="roadmap-item">
-      <div class="roadmap-phase">Long-Term</div>
-      <div class="roadmap-title">The Bigger Picture</div>
-      <div class="roadmap-desc">Becoming someone who bridges the gap between technical security and the business owners who need it — particularly in e-commerce. Someone who understands both worlds and can protect what people have built.</div>
+      <div class="roadmap-phase">Long-Term Strategy</div>
+      <div class="roadmap-title">Strategic Advisory</div>
+      <div class="roadmap-desc">Positioning to bridge the divide between technical security operations and business leadership. The objective is to provide comprehensive protection for digital assets by understanding both the infrastructure and the commercial imperatives behind them.</div>
     </div>
   </div>
 </section>
@@ -1016,7 +1003,7 @@
 <section id="connect">
   <div class="section-label fade-in">// 05 — Connect</div>
   <h2 class="fade-in">Let's talk</h2>
-  <p class="connect-sub fade-in">The best way to reach me is through LinkedIn. I'm always open to conversations about IT, security, and opportunities.</p>
+  <p class="connect-sub fade-in">Focused on rigorous IT support and secure system practices. Connect with me on LinkedIn to discuss where my foundational skills align with your team's operational needs.</p>
   <div class="connect-links fade-in">
     <a href="https://linkedin.com/in/anthfish/" target="_blank" class="connect-link">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
